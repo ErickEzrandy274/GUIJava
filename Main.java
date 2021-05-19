@@ -89,39 +89,37 @@ class MyGUI extends JFrame {
                 try {
                     if(name.getText().toString().trim().equals("")) {
                         result.setText("Anda belum memasukkan username!");
-                        result.setFont(new Font("Goblin One", Font.BOLD, 20));
+                        result2.setText("");
                         panelSouth.setBackground(Color.WHITE);
 
                     } else {
                         if(isString(name.getText().toString().trim())) {
                             if(isianNIM.getText().toString().trim().equals("")) {
                                 result.setText("Anda belum memasukkan NIM!");
-                                result.setFont(new Font("Goblin One", Font.BOLD, 20));
+                                result2.setText("");
                                 panelSouth.setBackground(Color.WHITE);
                             } else {
                                 Long.parseLong(isianNIM.getText().toString());
                                 if (score > 700) {
                                     result.setText("SELAMAT, ANDA DINYATAKAN SEBAGAI CALON");
                                     result2.setText("MAHASISWA BARU INSTITUT TEKNOLOGI KONOHAGAKURE");
-                                    //result.setFont(new Font("Goblin One", Font.BOLD, 20));
                                     panelSouth.setBackground(Color.GREEN);
 
                                 } else {
                                     result.setText("MOHON MAAF ANDA TIDAK LULUS SELEKSI");
-                                    result.setFont(new Font("Goblin One", Font.BOLD, 20));
                                     panelSouth.setBackground(Color.RED);
                                 }
                             }
 
                         } else {
                             result.setText("Username Anda tidak valid!");
-                            result.setFont(new Font("Goblin One", Font.BOLD, 20));
+                            result2.setText("");
                             panelSouth.setBackground(Color.WHITE);
                         }
                     }
                 } catch (NumberFormatException error) {
                     result.setText("NIM Anda tidak valid!");
-                    result.setFont(new Font("Goblin One", Font.BOLD, 20));
+                    result2.setText("");
                     panelSouth.setBackground(Color.WHITE);
                 }
             }    
